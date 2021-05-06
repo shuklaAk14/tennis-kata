@@ -9,15 +9,9 @@ import java.util.stream.IntStream;
 import static org.junit.Assert.assertEquals;
 
 public class TennisGameHelperTest {
-    private Player player1;
-    private Player player2;
+    private Player player1  = new Player("player1");
+    private Player player2 = new Player("player2");
     private final TennisGameHelper tennisGameHelper = new TennisGameHelper();
-
-    @Before
-    public void beforeGameTest() {
-        player1 = new Player("player1");
-        player2 = new Player("player2");
-    }
 
     @Test
     public void should_return_no_winner_when_both_player_has_score_zero() {

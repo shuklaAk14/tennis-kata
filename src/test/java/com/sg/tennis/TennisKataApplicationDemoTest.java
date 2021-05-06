@@ -13,16 +13,11 @@ import static org.junit.Assert.assertEquals;
 
 public class TennisKataApplicationDemoTest{
 
-    private Player player1;
-    private Player player2;
+    private Player player1 =new Player("player1");
+    private Player player2 = new Player("player2");
     private final GameStrategyContext tennisGameContext = new GameStrategyContext(new TennisGame());
     private final GameStrategyContext tennisSetContext = new GameStrategyContext(new TennisSetStrategy());
 
-    @Before
-    public void beforeGameTest() {
-        player1 = new Player("player1");
-        player2 = new Player("player2");
-    }
     @Test
     public void should_return_GAME_NOT_STARTED_message_when_both_player_not_started_and_has_score_zero() {
         String s = tennisGameContext.executeStrategy(player1, player2,3);
