@@ -7,15 +7,15 @@ import static java.lang.Math.abs;
 public class TennisGameHelper {
 
 
-    public String winnerPlayer(Player p1, Player p2) {
+    public String winnerPlayer(Player p1, Player p2, int maxWiningPoint) {
         Player leadPlayer = getLeadPlayer(p1, p2);
-        return p1.getScore() >= 3 && p2.getScore() >= 3 ?
+        return p1.getScore() >= maxWiningPoint && p2.getScore() >= maxWiningPoint ?
                 checkForDeuceOrAdvantageOrWinner(p1, p2, leadPlayer) :
-                checkForWinner(leadPlayer);
+                checkForWinner(leadPlayer, maxWiningPoint);
     }
 
-    private String checkForWinner(Player leadPlayer) {
-        return leadPlayer.getScore() >= 3 ? leadPlayer.getName() : "No Winner";
+    private String checkForWinner(Player leadPlayer, int maxWiningPoint) {
+        return leadPlayer.getScore() >= maxWiningPoint ? leadPlayer.getName() : "No Winner";
     }
 
     private String checkForDeuceOrAdvantageOrWinner(Player p1, Player p2, Player leadPlayer) {
@@ -26,7 +26,7 @@ public class TennisGameHelper {
         return p1.getScore() == p2.getScore() ? "DEUCE" : "ADVANTAGE";
     }
 
-    private Player getLeadPlayer(Player player1, Player player2) {
+    public Player getLeadPlayer(Player player1, Player player2) {
         return (player1.getScore() > player2.getScore()) ? player1 : player2;
     }
 

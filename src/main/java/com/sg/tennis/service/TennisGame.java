@@ -4,14 +4,15 @@ import com.sg.tennis.entities.Player;
 import com.sg.tennis.enums.ScoreEnum;
 import com.sg.tennis.helper.TennisGameHelper;
 
-public class TennisGame {
+public class TennisGame implements GameStrategy {
 
-    public String startGame(Player p1, Player p2) {
-        if(p1.getScore()==0 && p2.getScore()==0 ) {
+    @Override
+    public String startGame(Player p1, Player p2, int maxWiningPoint) {
+        if (p1.getScore() == 0 && p2.getScore() == 0) {
             return "Game not Started";
         }
         TennisGameHelper tennisGameHelper = new TennisGameHelper();
-        String winnerMsgOrName = tennisGameHelper.winnerPlayer(p1, p2);
+        String winnerMsgOrName = tennisGameHelper.winnerPlayer(p1, p2, maxWiningPoint);
         return p1.getName().equals(winnerMsgOrName) || p2.getName().equals(winnerMsgOrName) ?
                 buildWinnerMessage(p1, p2, winnerMsgOrName) :
                 winnerMsgOrName;
