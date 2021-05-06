@@ -9,13 +9,22 @@ public class TennisGameHelper {
 
     public String winnerPlayer(Player p1, Player p2) {
         Player leadPlayer = getLeadPlayer(p1, p2);
-        return checkForWinner(leadPlayer);
+        return p1.getScore() >= 3 && p2.getScore() >= 3 ?
+                checkForDeuceOrAdvantageOrWinner(p1, p2, leadPlayer) :
+                checkForWinner(leadPlayer);
     }
 
     private String checkForWinner(Player leadPlayer) {
         return leadPlayer.getScore() >= 3 ? leadPlayer.getName() : "No Winner";
     }
 
+    private String checkForDeuceOrAdvantageOrWinner(Player p1, Player p2, Player leadPlayer) {
+        return abs(p1.getScore() - p2.getScore()) >= 2 ? leadPlayer.getName() : checkForDeuceOrAdvantage(p1, p2);
+    }
+
+    private String checkForDeuceOrAdvantage(Player p1, Player p2) {
+        return p1.getScore() == p2.getScore() ? "DEUCE" : "ADVANTAGE";
+    }
 
     private Player getLeadPlayer(Player player1, Player player2) {
         return (player1.getScore() > player2.getScore()) ? player1 : player2;
