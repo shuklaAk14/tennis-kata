@@ -1,18 +1,17 @@
 package com.sg.tennis.provider;
 
 import com.sg.tennis.entities.Player;
-import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class WinnerAndDeuceProviderTest {
+public class WinnerAndDeuceRuleTest {
 
     private final Player player1  = new Player("player1");
     private final Player player2 = new Player("player2");
-    private final GameRuleProvider winnerAndDeuceProvider = new WinnerAndDeuceProvider();
+    private final IGameRuleProvider winnerAndDeuceProvider = new WinnerAndDeuceRule();
 
     @Test
     public void should_return_player_name_when_player_has_AtLeastFourPoints_InTotal_And_AtLeastTwoPoints_More_Than_With_other_player () {

@@ -1,18 +1,15 @@
 package com.sg.tennis.provider;
 
 import com.sg.tennis.entities.Player;
-import junit.framework.TestCase;
 import org.junit.Test;
-
-import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class DeuceAndAdvantageProviderTest{
+public class DeuceAndAdvantageRuleTest {
 
     private final Player player1  = new Player("player1");
     private final Player player2 = new Player("player2");
-    private final GameRuleProvider deuceAndAdvantageProvider = new DeuceAndAdvantageProvider();
+    private final IGameRuleProvider deuceAndAdvantageProvider = new DeuceAndAdvantageRule();
 
     @Test
     public void should_return_DEUCE_when_both_player_has_score_three () {

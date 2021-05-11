@@ -2,15 +2,15 @@ package com.sg.tennis.util;
 
 import com.sg.tennis.entities.Player;
 import com.sg.tennis.enums.ScoreEnum;
-import com.sg.tennis.provider.WinnerAndDeuceProvider;
-import com.sg.tennis.provider.WinnerProvider;
+import com.sg.tennis.provider.WinnerAndDeuceRule;
+import com.sg.tennis.provider.WinnerRule;
 
 public class GameUtil {
 
     public static String getWinnerMsgOrName(Player p1, Player p2, int maxWiningPoint) {
         return p1.getScore() >= maxWiningPoint && p2.getScore() >= maxWiningPoint ?
-                new WinnerAndDeuceProvider().checkForRule(p1, p2, maxWiningPoint) :
-                new WinnerProvider().checkForRule(p1, p2, maxWiningPoint);
+                new WinnerAndDeuceRule().checkForRule(p1, p2, maxWiningPoint) :
+                new WinnerRule().checkForRule(p1, p2, maxWiningPoint);
     }
 
     public static Player getLeadPlayer(Player player1, Player player2) {

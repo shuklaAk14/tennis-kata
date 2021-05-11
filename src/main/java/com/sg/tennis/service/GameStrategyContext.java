@@ -4,9 +4,9 @@ import com.sg.tennis.entities.Player;
 
 public class GameStrategyContext {
 
-    private final GameStrategy strategy;
+    private final IGameStrategy strategy;
 
-    public GameStrategyContext(GameStrategy strategy) {
+    public GameStrategyContext(IGameStrategy strategy) {
         this.strategy = strategy;
     }
 

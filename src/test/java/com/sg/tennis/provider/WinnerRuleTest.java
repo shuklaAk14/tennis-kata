@@ -1,18 +1,17 @@
 package com.sg.tennis.provider;
 
 import com.sg.tennis.entities.Player;
-import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class WinnerProviderTest {
+public class WinnerRuleTest {
 
     private final Player player1  = new Player("player1");
     private final Player player2 = new Player("player2");
-    private final GameRuleProvider winnerProvider = new WinnerProvider();
+    private final IGameRuleProvider winnerProvider = new WinnerRule();
 
     @Test
     public void should_return_no_winner_when_both_player_has_score_zero() {

@@ -2,7 +2,7 @@ package com.sg.tennis;
 
 import com.sg.tennis.entities.Player;
 import com.sg.tennis.service.GameStrategyContext;
-import com.sg.tennis.service.TennisGame;
+import com.sg.tennis.service.TennisIGame;
 import com.sg.tennis.service.TennisSetStrategy;
 
 import java.util.stream.IntStream;
@@ -18,7 +18,7 @@ public class TennisKataApplicationDemo {
         IntStream.rangeClosed(1, 3).forEach((Integer) -> p1.winBall());
         IntStream.rangeClosed(1, 1).forEach((Integer) ->  p2.winBall());
 
-        GameStrategyContext context = new GameStrategyContext(new TennisGame());
+        GameStrategyContext context = new GameStrategyContext(new TennisIGame());
         System.out.println(context.executeStrategy(p1,p2,3));
 
         context = new GameStrategyContext(new TennisSetStrategy());

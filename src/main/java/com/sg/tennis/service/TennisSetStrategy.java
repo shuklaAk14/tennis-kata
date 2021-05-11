@@ -5,7 +5,7 @@ import com.sg.tennis.entities.Player;
 import static com.sg.tennis.util.GameUtil.*;
 import static java.lang.Math.abs;
 
-public class TennisSetStrategy implements GameStrategy {
+public class TennisSetStrategy implements IGameStrategy {
     @Override
     public String startGame(Player p1, Player p2, int maxWiningPoint) {
         Player leadPlayer = getLeadPlayer(p1, p2);

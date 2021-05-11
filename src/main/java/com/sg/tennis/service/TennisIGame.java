@@ -5,7 +5,7 @@ import com.sg.tennis.entities.Player;
 import static com.sg.tennis.util.GameUtil.buildGameResult;
 import static com.sg.tennis.util.GameUtil.getWinnerMsgOrName;
 
-public class TennisGame implements GameStrategy {
+public class TennisIGame implements IGameStrategy {
 
     @Override
     public String startGame(Player p1, Player p2, int maxWiningPoint) {
