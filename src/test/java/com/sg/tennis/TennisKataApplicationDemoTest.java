@@ -2,7 +2,7 @@ package com.sg.tennis;
 
 import com.sg.tennis.entities.Player;
 import com.sg.tennis.service.GameStrategyContext;
-import com.sg.tennis.service.TennisIGame;
+import com.sg.tennis.service.TennisGame;
 import com.sg.tennis.service.TennisSetStrategy;
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ public class TennisKataApplicationDemoTest{
 
     private Player player1 =new Player("player1");
     private Player player2 = new Player("player2");
-    private final GameStrategyContext tennisGameContext = new GameStrategyContext(new TennisIGame());
+    private final GameStrategyContext tennisGameContext = new GameStrategyContext(new TennisGame());
     private final GameStrategyContext tennisSetContext = new GameStrategyContext(new TennisSetStrategy());
 
     @Test
